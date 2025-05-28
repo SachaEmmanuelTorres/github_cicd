@@ -12,14 +12,14 @@ jobs:
     
     strategy:
       matrix:
-        python-version: ["3.11.8", "3.12"]
+        python-version: ["3.11", "3.12"]  # Versions plus génériques
     
     steps:
     - name: Checkout du code
       uses: actions/checkout@v4
       
     - name: Configuration Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5  # Version plus récente
       with:
         python-version: ${{ matrix.python-version }}
         
