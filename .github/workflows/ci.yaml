@@ -27,7 +27,12 @@ jobs:
       run: |
         curl -LsSf https://astral.sh/uv/install.sh | sh
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-        
+        - name: Création de l'environnement virtuel
+        run: |
+          uv venv
+          .venv\Scripts\activate
+          uv pip install --upgrade pip
+
     - name: Installation des dépendances
       run: |
         uv pip install -r requirements.txt
