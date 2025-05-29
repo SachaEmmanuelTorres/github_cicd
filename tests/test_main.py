@@ -7,7 +7,7 @@ import json
 import pytest
 import responses
 from unittest.mock import patch
-from main import app, create_app
+from ..main import app, create_app
 
 
 @pytest.fixture
